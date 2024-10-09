@@ -1,0 +1,24 @@
+type Query {
+    accountsList: [BankAccount]
+    account(id: String): BankAccount
+}
+
+type Mutation {
+    addAccount(accountInput: BankAccountInput): BankAccount
+    updateAccount(id: String, accountInput: BankAccountInput): BankAccount
+    deleteAccount(id: String): Boolean
+}
+
+type BankAccount {
+    id: String
+    accountType: String
+    balance: Float
+    currency: String
+    creationDate: String
+}
+
+input BankAccountInput {
+    accountType: String
+    balance: Float
+    currency: String
+}
